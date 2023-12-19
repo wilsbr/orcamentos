@@ -1,0 +1,85 @@
+Sistema Web
+
+-> Layout bem básico porém moderno. 
+Exemplo: https://imgur.com/a/f9yokBQ
+
+Registro
+-> Cadastro pra entrar no sistema, pedindo apenas nome, email e senha. (com recaptcha)
+
+Area de Login (Opção de recuperar senha tb, gera senha nova e manda por email)
+Pede email e senha (com recaptcha)
+
+Perfil
+
+-> Nome Completo
+-> Email
+-> WhatsApp
+-> Endereço
+-> CPF ou CNPJ
+-> Trocar Senha
+-> Saldo da conta
+
+- Assinaturas
+Será assinatura de hospedagem de sites.
+Cada assinatura tem os seguintes campos:
+-> Domínio
+-> Link Painel (Com hyperlink pra acessar e logar sozinho via app)
+-> Login
+-> Senha
+-> Status: (Ativo, suspendo, cancelado)
+-> Plano (Valor por hora e por mes)
+-> Botão para trocar de plano, mostrando os planos cadastrados
+-> Escolher se quer esse plano por hora, mensal, semestral, anual, bianual ou trianual.
+
+Caso alguma assinatura esteja suspensa, aparecer um botão para efetuar solicitação de remoção de suspensão. Esse botão abre a pagina do financeiro
+
+Para contratar um plano, precisa completar o cadastro (Cpf, endereço, etc).
+
+- Assinaturas Nova
+-> Pede pra digitar o domínio que quer ativar, se tiver saldo na conta ele deixa, se nao envia para fazer pagamento.
+
+- Ticket de suporte
+-> Assunto
+-> Setor (Suporte, financeiro, abuse)
+-> Mensagem
+
+(Após resposta do admin, ele pode responder novamente o ticket)
+
+- Crons
+-> Cron executada 1x por hora para descontar do saldo dos clientes o valor referente a 1 hora de serviço.
+-> Cron executada a cada 24 horas, pra avisar de saldos baixos por e-mail.
+
+-> Wiki
+Apenas manda pro meu site de ajuda
+
+- Cancelamento
+-> Abre ticket de suporte para financeiro.
+
+ADMIN
+-> Controle de saldos (adicionar ou remover saldo nas contas)
+-> Tickets (Poder ver e responder e fechar tickets dos clientes)
+-> Confirmar pagamentos recebidos (Quando a pessoa adiciona um pagamento manual e confirma, o admin pode aceitar e ai sim o saldo entra na conta)
+-> Cadastro e edição de Planos
+- Cadastro de planos e valor cobrado por hora, mes, semestre, ano, etc)
+- Descrição dos itens do plano
+- Avisar de assinaturas para suspender, pois está sem saldo a mais de 72 horas.
+- Listagem de serviços ativos, com opção de alterar pacote, excluir, alterar senha, reativar, etc.
+
+-> Listagem de Clientes e Edição
+-> Relatório de Total de vendas no mês
+-> Controle de Faturas geradas
+
+-> Avisos por email
+- Saldo inferior a 10 reais
+- Saldo Inferior a 30 reais
+- Nova assinatura ativada
+- Assinatura Suspensa
+- Assinatura Cancelada
+- Bem vindo (Após registro)
+- Recuperar senha
+- Nova resposta no ticket
+
+Preciso 3 valores diferentes:
+1. Sem integração com nada. (Tudo manual)
+2. Com integração com meio de pagamento (pode ser mercadopago ou Pagseguro).
+3. Com integração meio de pagamento e integração com painel ENHANCE (https://apidocs.enhance.com/) para ativação, suspensão  e exclusão de contas automaticamente.
